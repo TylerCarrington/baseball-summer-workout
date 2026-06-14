@@ -1,0 +1,6 @@
+{
+  "name": "8-Week Pitcher Training & Arm-Care",
+  "description": "An interactive week-by-week summer training, arm-care, speed, and agility program for youth baseball players with exercise videos, built-in pitch count tracking, and daily progression logging.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
