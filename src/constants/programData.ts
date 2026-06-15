@@ -15,7 +15,8 @@ export const EXERCISE_LIBRARY: Exercise[] = [
     },
     description: 'Run forward driving your knees up to hip height, pumping your arms with elbow angles at 90 degrees.',
     cues: ['Stay tall, don\'t lean back', 'Land soft on your midfoot', 'Keep a fast, springy rhythm'],
-    visualType: 'warmup'
+    visualType: 'warmup',
+    videoLink: 'https://www.youtube.com/embed/ZNDHivUg7vA?si=5hZ2rtSZ12Gncs-g'
   },
   {
     id: 'butt-kicks',
@@ -30,7 +31,8 @@ export const EXERCISE_LIBRARY: Exercise[] = [
     },
     description: 'Jog forward while rapidly bringing your heels up to touch your glutes with each step, keeping thighs vertical.',
     cues: ['Keep your knees pointing down', 'Pump your arms', 'Fast feet, minimal ground contact time'],
-    visualType: 'warmup'
+    visualType: 'warmup',
+    videoLink: 'https://www.youtube.com/embed/lVZi-AwxLPo?si=1FXHufMuN5zFzj2i'
   },
   {
     id: 'walking-lunge',
@@ -45,7 +47,8 @@ export const EXERCISE_LIBRARY: Exercise[] = [
     },
     description: 'Step forward into a split stance, lower hips until rear knee nearly touches the floor while stretching both arms straight up to the sky.',
     cues: ['Keep front heel glued to the floor', 'Reach high to stretch the front of your rear hip', 'Push straight up out of the bottom'],
-    visualType: 'lunge'
+    visualType: 'lunge',
+    videoLink: 'https://www.youtube.com/embed/DmbJ1-tKnLQ?si=6eEVFSemcoAfTA7y'
   },
   {
     id: 'lateral-shuffle',
@@ -60,7 +63,8 @@ export const EXERCISE_LIBRARY: Exercise[] = [
     },
     description: 'Push off your trailing leg to slide sideways without crossing your feet. Keep a athletic wide, low stance.',
     cues: ['Stay low like a shortstop', 'Do not cross your feet or click your heels', 'Push through the floor, don\'t hop'],
-    visualType: 'agility'
+    visualType: 'agility',
+    videoLink: 'https://www.youtube.com/embed/iBmvPEWt5og?si=SYgXn-N1L10-jLfU'
   },
   {
     id: 'arm-circles',
@@ -75,7 +79,8 @@ export const EXERCISE_LIBRARY: Exercise[] = [
     },
     description: 'Stand with feet shoulder-width apart, arms out to sides. Make circles, building from golf-ball size to beach-ball size, then repeat in backward direction.',
     cues: ['Stand tall with ears over shoulders', 'Keep shoulders relaxed down, not up in ears', 'Squeeze your shoulder blades behind you'],
-    visualType: 'warmup'
+    visualType: 'warmup',
+    videoLink: 'https://www.youtube.com/embed/UVMEnIaY8aU?si=UWg3-MSVoCSkM8fv'
   },
   {
     id: 'inchworm-walkouts',
@@ -90,7 +95,8 @@ export const EXERCISE_LIBRARY: Exercise[] = [
     },
     description: 'Bent at hips to touch floor. Walk hand out into a perfect high plank, hold for a moment, then baby-step feet back up to meet your hands.',
     cues: ['Keep knees as straight as comfortably possible', 'Squeeze your glutes in the plank', 'Walk your hands, don\'t sag your hips'],
-    visualType: 'warmup'
+    visualType: 'warmup',
+    videoLink: 'https://www.youtube.com/embed/ZY2ji_Ho0dA?si=7PIdyg_5axLgHImp'
   },
 
   // --- MOVEMENT / AGILITY ---
@@ -107,22 +113,40 @@ export const EXERCISE_LIBRARY: Exercise[] = [
     },
     description: 'Start at center cone. Sprint 5 yards right, touch line/cone, speed change to sprint 10 yards left, touch line/cone, sprint 5 yards back to center.',
     cues: ['Keep hips low when turning around', 'Sink weight on inside leg when transitioning', 'Accelerate through the center line'],
-    visualType: 'agility'
+    visualType: 'agility',
+    videoLink: 'https://www.youtube.com/embed/67-Bbh92p-4?si=0_l2sb6i2JiJqe1S'
   },
   {
     id: 'bear-crawl',
-    name: 'Bear Crawl / Crab Walk',
+    name: 'Bear Crawl',
     category: 'agility',
     baseReps: '15-20 yds',
     phaseSpecs: {
-      1: '15 yds Bear Crawl + 15 yds Crab Walk',
-      2: '20 yds Bear Crawl + 20 yds Crab Walk (low hips)',
-      3: '20 yds backward Bear Crawl + forward Crab Walk',
-      4: '10 yds each (slow and steady control)'
+      1: '15 yds Bear Crawl',
+      2: '20 yds Bear Crawl',
+      3: '20 yds backward Bear Crawl',
+      4: '10 yds Bear Crawl (slow and steady control)'
     },
-    description: 'Crawling forward on hands and toes (bear crawl - knees close to floor but not touching) and backwards on hands/feet with hips raised (crab walk - chin tucked).',
-    cues: ['Bear: Squeeze abs, look 1 foot in front of hands', 'Crab: Squeeze shoulders together, push ground away', 'Move opposite arm and opposite leg together'],
-    visualType: 'agility'
+    description: 'Crawling forward on hands and toes with knees close to floor but not touching.',
+    cues: ['Squeeze abs, look 1 foot in front of hands', 'Keep knees an inch off the ground', 'Move opposite arm and opposite leg together'],
+    visualType: 'agility',
+    videoLink: 'https://www.youtube.com/embed/t8XLor7unqU?si=ThExqx35dAl27zLi&start=6'
+  },
+  {
+    id: 'crab-walk',
+    name: 'Crab Walk',
+    category: 'agility',
+    baseReps: '15-20 yds',
+    phaseSpecs: {
+      1: '15 yds Crab Walk',
+      2: '20 yds Crab Walk (low hips)',
+      3: '20 yds forward Crab Walk',
+      4: '10 yds Crab Walk (slow and steady control)'
+    },
+    description: 'Crawling backwards on hands/feet with hips raised and chin tucked.',
+    cues: ['Squeeze shoulders together, push ground away', 'Keep hips elevated', 'Move opposite arm and opposite leg together'],
+    visualType: 'agility',
+    videoLink: 'https://www.youtube.com/embed/I-3r4cl4ahA?si=YvtPLbZY3apyET8K&start=6'
   },
   {
     id: 'pogo-hops',
@@ -137,7 +161,8 @@ export const EXERCISE_LIBRARY: Exercise[] = [
     },
     description: 'Bounce up and down on the balls of your feet with stiff legs, using primarily your calves and ankles to spring upward. Land quietly like an athlete.',
     cues: ['Ankles are like steel springs', 'Legs are mostly straight, soft knee bend', 'Listen to your feet: make NO sound on landing'],
-    visualType: 'agility'
+    visualType: 'agility',
+    videoLink: 'https://www.youtube.com/embed/A7m_4Vyp0bU?si=6Ox5lUDxjRWjPuoM'
   },
   {
     id: 'broad-jump',
@@ -152,7 +177,8 @@ export const EXERCISE_LIBRARY: Exercise[] = [
     },
     description: 'Stand tall, swing arms back while bending hips and knees. Explode your hips open and swing arms forward to jump for distance, sticking the landing.',
     cues: ['Load your hips like a spring', 'Throw your arms forward to power the jump', 'Land soft on flat feet: "stick" the landing without taking extra steps'],
-    visualType: 'agility'
+    visualType: 'agility',
+    videoLink: 'https://www.youtube.com/embed/uhz-ia-2UcM?si=-7pWFLvw7c8Jha7y'
   },
   {
     id: 'line-hops',
@@ -167,7 +193,8 @@ export const EXERCISE_LIBRARY: Exercise[] = [
     },
     description: 'Find a line on the ground. Hop back-and-forth or side-to-side over the line as fast as possible keeping chest stable.',
     cues: ['Feet stay close together', 'Stay light on the balls of your feet', 'Minimize knee bend, use quick ankle springs'],
-    visualType: 'agility'
+    visualType: 'agility',
+    videoLink: 'https://www.youtube.com/embed/S8tFqJwFYnM?si=pLjikn56XhN7Dtyu'
   },
   {
     id: 'box-jump',
@@ -182,7 +209,8 @@ export const EXERCISE_LIBRARY: Exercise[] = [
     },
     description: 'Jump from the ground onto a low stable box or aerobic step (6-12 inches). Explode up and absorb the force by landing in a partial squat position.',
     cues: ['Land like a ninja: completely silent', 'Stand up tall at the top to finish the rep', 'Step down carefully, never jump down backwards'],
-    visualType: 'agility'
+    visualType: 'agility',
+    videoLink: 'https://www.youtube.com/embed/eQqwXl44zNE?si=E-FRf8vksZ5JeDmr'
   },
 
   // --- STRENGTH CIRCUIT ---
@@ -199,7 +227,8 @@ export const EXERCISE_LIBRARY: Exercise[] = [
     },
     description: 'Stand with feet slightly wider than shoulders. Sit back and down as if lowering into a chair. Keep chest up and knees tracking in line with toes.',
     cues: ['Drive your knees out, don\'t let them buckle', 'Keep your whole foot flat: heels glued down', 'Keep chest tall, eyes straight forward'],
-    visualType: 'squat'
+    visualType: 'squat',
+    videoLink: 'https://www.youtube.com/embed/pEGfGwp6IEA?si=17h3eEi9pS7HRQst'
   },
   {
     id: 'push-up',
@@ -214,7 +243,8 @@ export const EXERCISE_LIBRARY: Exercise[] = [
     },
     description: 'Start in a secure high plank. Keeping elbows at 45 degrees, lower your body as a single unit until chest is 2 inches off the ground, then push away.',
     cues: ['Don\'t lift or drop your chin: neck is straight', 'Squeeze your glutes and pull belly button to spine', 'Body stays straight like a steel broomstick'],
-    visualType: 'pushup'
+    visualType: 'pushup',
+    videoLink: 'https://www.youtube.com/embed/WDIpL0pjun0?si=vOvd8Z1m0kQxQDXE'
   },
   {
     id: 'band-row',
@@ -229,7 +259,8 @@ export const EXERCISE_LIBRARY: Exercise[] = [
     },
     description: 'Anchor resistance band at chest height. Hold handles, step back to create tension. Pull elbows back, squeezing shoulder blades together.',
     cues: ['Pull with your back, not just your hands', 'Keep shoulders down, away from your ears', 'Stand tall, don\'t lean backward or forward'],
-    visualType: 'row'
+    visualType: 'row',
+    videoLink: 'https://www.youtube.com/embed/JP2xq33lNF0?si=XNq9fBvAD2Xtf-3n'
   },
   {
     id: 'glute-bridge',
@@ -244,22 +275,24 @@ export const EXERCISE_LIBRARY: Exercise[] = [
     },
     description: 'Lie on your back with knees bent, feet flat. Drive hips towards the sky by squeezing glutes. Transition to lifting one foot off the ground for Single-Leg version.',
     cues: ['Drive through your heels, not your toes', 'Squeeze glutes at the top like holding a coin', 'Do not arch your lower back too much'],
-    visualType: 'bridge'
+    visualType: 'bridge',
+    videoLink: 'https://www.youtube.com/embed/AVAXhy6pl7o?si=az7-uiFHylFBA5KZ'
   },
   {
     id: 'reverse-lunge',
-    name: 'Reverse Lunge (to Lateral Lunge in Phase 3)',
+    name: 'Reverse Lunge',
     category: 'strength',
     baseReps: 'Progression by Phase',
     phaseSpecs: {
       1: '6 reps/leg (Reverse Lunge only, step straight back)',
       2: '8 reps/leg (Reverse Lunge, steady speed)',
-      3: '8 reps/leg (Combo: 4 Reverse Lunges + 4 Lateral Lunges per leg)',
+      3: '8 reps/leg (Reverse Lunge, deep stretch and power up)',
       4: '6 reps/leg (Reverse Lunge, smooth bodyweight movement)'
     },
-    description: 'Stand tall. Step one foot straight back, lowering your back knee near the ground. For lateral lunge: step directly side, sinking hips back over the step knee.',
-    cues: ['Keep your front knee directly over your ankle', 'Push off the front heel to stand up', 'Lateral: Keep the passive trailing leg straight'],
-    visualType: 'lunge'
+    description: 'Stand tall. Step one foot straight back, lowering your back knee near the ground.',
+    cues: ['Keep your front knee directly over your ankle', 'Push off the front heel to stand up', 'Keep your chest tall'],
+    visualType: 'lunge',
+    videoLink: 'https://www.youtube.com/embed/xrPteyQLGAo?si=NTT94T00UEXmK7Zz'
   },
   {
     id: 'farmers-carry',
@@ -274,7 +307,8 @@ export const EXERCISE_LIBRARY: Exercise[] = [
     },
     description: 'Hold dumbbells or heavy water jugs in each hand. Stand tall with perfect posture and walk slow, controlled heel-to-toe steps.',
     cues: ['Imagine a book resting on your head', 'Shoulders down and back, don\'t shrug', 'Squeeze dumbbells hard to build throwing grip strength'],
-    visualType: 'carry'
+    visualType: 'carry',
+    videoLink: 'https://www.youtube.com/embed/8OtwXwrJizk?si=9ZSwnkn-rJ0VcAqk'
   },
   {
     id: 'balance-reach',
@@ -289,7 +323,8 @@ export const EXERCISE_LIBRARY: Exercise[] = [
     },
     description: 'Balance on one leg with soft knee. Carefully reach your other leg forward, sideways, and backward without touching the ground, then return to center.',
     cues: ['Pick a spot on the wall to look at', 'Squeeze the glute of the active stance leg', 'Keep your hips level, don\'t tilt side-to-side'],
-    visualType: 'balance'
+    visualType: 'balance',
+    videoLink: 'https://www.youtube.com/embed/5au30Xk6Gkk?si=TWeUR0AAfIVTKYZf'
   },
 
   // --- CORE & ROTATOR ---
@@ -306,7 +341,8 @@ export const EXERCISE_LIBRARY: Exercise[] = [
     },
     description: 'Support your weight on your forearms and toes. Keep your body in a straight line with abdominal muscles locked tight.',
     cues: ['Squeeze your butt tight', 'Push your elbows into the ground to dome your upper back', 'Don\'t let your hips sag down, keep them level'],
-    visualType: 'core'
+    visualType: 'core',
+    videoLink: 'https://www.youtube.com/embed/pvIjsG5Svck?si=mGJeQxfJWofzZZNA'
   },
   {
     id: 'side-plank',
@@ -321,7 +357,8 @@ export const EXERCISE_LIBRARY: Exercise[] = [
     },
     description: 'Lie on your side, propped on forearm. Stack your feet or knees, lift your hips off the ground to make a straight line.',
     cues: ['Keep your shoulder directly over elbow', 'Squeeze the bottom rib up high', 'Keep head in line with spine, don\'t tuck chin'],
-    visualType: 'core'
+    visualType: 'core',
+    videoLink: 'https://www.youtube.com/embed/N_s9em1xTqU?si=E0gM82FTyqhEAnrX'
   },
   {
     id: 'dead-bug',
@@ -336,7 +373,8 @@ export const EXERCISE_LIBRARY: Exercise[] = [
     },
     description: 'Lie on back, arms pointing up, knees/hips bent 90 degrees. Lower right arm overhead and left leg straight out toward floor. Return, swap sides.',
     cues: ['Glue your lower back to the floor: leave NO space', 'Breathe out hard as you extend your leg', 'Go slow: slower is harder and better'],
-    visualType: 'core'
+    visualType: 'core',
+    videoLink: 'https://www.youtube.com/embed/o4GKiEoYClI?si=e9jvzZ2Mj2hcP-rz'
   },
   {
     id: 'medball-throw',
@@ -383,7 +421,8 @@ export const EXERCISE_LIBRARY: Exercise[] = [
     },
     description: 'Elbow pinned to your side at 90 degrees. Hold band, pull hand outward away from your stomach, keeping elbow tight.',
     cues: ['Place a rolled-up towel between elbow and ribs to keep form perfect'],
-    visualType: 'stretch'
+    visualType: 'stretch',
+    videoLink: 'https://www.youtube.com/embed/dLSytuFOCX8?si=PKEFtjHiDRpLfs6L'
   },
   {
     id: 'arm-care-2',
@@ -398,7 +437,8 @@ export const EXERCISE_LIBRARY: Exercise[] = [
     },
     description: 'Elbow pinned to side at 90 degrees. Hold band, pull hand inward across your stomach, keeping your shoulder stable.',
     cues: ['Keep wrist straight; move only from the rotator cuff'],
-    visualType: 'stretch'
+    visualType: 'stretch',
+    videoLink: 'https://www.youtube.com/embed/7bXPgfGzW9k?si=ykiVpcAQjk__FXoo'
   },
   {
     id: 'arm-care-3',
@@ -413,7 +453,8 @@ export const EXERCISE_LIBRARY: Exercise[] = [
     },
     description: 'Lie on side, arm at 90 degrees out from shoulder. Carefully press your wrist down toward the floor using opposite hand.',
     cues: ['Go strictly to comfortable stretch; NEVER push into pinching pain'],
-    visualType: 'stretch'
+    visualType: 'stretch',
+    videoLink: 'https://www.youtube.com/embed/a_Z9WhGyKkE?si=wPReIIIPQXQ1GDes&start=10'
   },
   {
     id: 'arm-care-4',
@@ -428,7 +469,8 @@ export const EXERCISE_LIBRARY: Exercise[] = [
     },
     description: 'Sit on ground with knees bent at 90 degrees in front/side. Without lifting hands if possible, rotate hips side to side to change knee direction.',
     cues: ['Unlocks hip internal rotation key to generating force from the legs'],
-    visualType: 'stretch'
+    visualType: 'stretch',
+    videoLink: 'https://www.youtube.com/embed/m51AZSXMvEA?si=ElLdbQAv8pRsqSc0'
   },
   {
     id: 'arm-care-5',
@@ -443,7 +485,8 @@ export const EXERCISE_LIBRARY: Exercise[] = [
     },
     description: 'On all fours, place hand behind head. Rotate elbow up to sky, opening your chest, then tuck elbow under towards opposite armpit.',
     cues: ['Follow your elbow with your eyes to get full upper back (T-Spine) stretch'],
-    visualType: 'stretch'
+    visualType: 'stretch',
+    videoLink: 'https://www.youtube.com/embed/XoFSl3i9Gns?si=vvdXLPFZKneEDxGK'
   },
   {
     id: 'arm-care-6',
@@ -458,7 +501,8 @@ export const EXERCISE_LIBRARY: Exercise[] = [
     },
     description: 'Hinge forward at hips. Raise arms straight up at 45 degrees for Ys, straight sideways for Ts, and bent-elbow squeeze for Ws.',
     cues: ['Squeeze the muscles around your shoulder blades on every single rep'],
-    visualType: 'warmup'
+    visualType: 'warmup',
+    videoLink: 'https://www.youtube.com/embed/QdGTI4Lshg4?si=4TAIeNT73rG6jyDv'
   },
   {
     id: 'day-a-step-2',
@@ -515,7 +559,8 @@ export const EXERCISE_LIBRARY: Exercise[] = [
     },
     description: 'Step back in to 20 ft for 5 easy wrist flips to taper down. Immediately finish with the posterior chest doorway stretch!',
     cues: ['Step in to 20 ft', '5 easy wrist flips', 'Follow up with stretches'],
-    visualType: 'stretch'
+    visualType: 'stretch',
+    videoLink: 'https://www.youtube.com/embed/r6mv__re704?si=77NcRdHY7zmXEJO5'
   }
 ];
 
@@ -609,7 +654,7 @@ export const DAILY_PLANS: DayPlan[] = [
     tipDescription: 'During side planks and dead bugs, imagine a glass of water balancing on your stomach. Keep your core tight and prevent your hips from rotating toward the floor.',
     blocks: [
       { name: 'Dynamic Warm-Up', time: '5 min', focus: 'Raise heart rate, prep joints', category: 'warmup', exercises: ['high-knees', 'lateral-shuffle', 'inchworm-walkouts', 'arm-circles'] },
-      { name: 'Movement Skills / Agility', time: '8 min', focus: 'Speed & multi-directional power', category: 'agility', exercises: ['bear-crawl', 'line-hops'] },
+      { name: 'Movement Skills / Agility', time: '8 min', focus: 'Speed & multi-directional power', category: 'agility', exercises: ['bear-crawl', 'crab-walk', 'line-hops'] },
       { name: 'Strength Circuit', time: '15 min', focus: 'Unilateral leg work & push muscles', category: 'strength', exercises: ['push-up', 'glute-bridge', 'reverse-lunge', 'balance-reach'] },
       { name: 'Core & Rotational Power', time: '5 min', focus: 'Anti-rotation core', category: 'core', exercises: ['side-plank', 'dead-bug'] },
       { name: 'Cool-Down', time: '3 min', focus: 'Static stretching', category: 'cooldown', exercises: ['stretches'] }

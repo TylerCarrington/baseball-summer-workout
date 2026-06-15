@@ -445,6 +445,21 @@ export default function WorkoutPlanner({ currentDate }: WorkoutPlannerProps) {
                                 <p className="leading-relaxed font-semibold text-[#1A202C]">{exercise.description}</p>
                               </div>
 
+                              {exercise.videoLink && (
+                                <div className="mt-2 aspect-video rounded-xl overflow-hidden border-2 border-[#004E89] bg-black shadow-inner">
+                                  <iframe
+                                    width="100%"
+                                    height="100%"
+                                    src={exercise.videoLink}
+                                    title={`${exercise.name} video guide`}
+                                    frameBorder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    referrerPolicy="strict-origin-when-cross-origin"
+                                    allowFullScreen
+                                  ></iframe>
+                                </div>
+                              )}
+
                               {/* Simple SVG Motion Guide */}
                               <div className="relative h-18 bg-white rounded-xl flex items-center justify-center gap-4 text-[10px] text-gray-500 overflow-hidden px-4 border-2 border-[#004E89] shadow-inner">
                                 <span className="absolute left-1.5 top-1.5 text-[8px] font-black text-[#718096] uppercase tracking-widest leading-none">Active Model Guide</span>
