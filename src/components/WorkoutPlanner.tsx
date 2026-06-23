@@ -9,6 +9,7 @@ import {
   DayPlan,
   ProgramPhase,
   DailyWorkoutProgress,
+  PitchLog,
 } from "../types";
 import {
   Trophy,
@@ -103,9 +104,15 @@ function InlineTimer({
 
 interface WorkoutPlannerProps {
   currentDate: string;
+  logs?: PitchLog[];
+  onLogsChanged?: (logs: PitchLog[]) => void;
 }
 
-export default function WorkoutPlanner({ currentDate }: WorkoutPlannerProps) {
+export default function WorkoutPlanner({
+  currentDate,
+  logs = [],
+  onLogsChanged,
+}: WorkoutPlannerProps) {
   // 1. Selector states
   const [selectedWeek, setSelectedWeek] = useState<number>(1);
   const [selectedDayId, setSelectedDayId] = useState<number>(
@@ -212,7 +219,7 @@ export default function WorkoutPlanner({ currentDate }: WorkoutPlannerProps) {
           ]
         : undefined;
 
-    const newLog = {
+    const newLog: PitchLog = {
       id: Math.random().toString(36).substr(2, 9),
       date: currentDate,
       pitchesCount: 0,
@@ -223,9 +230,12 @@ export default function WorkoutPlanner({ currentDate }: WorkoutPlannerProps) {
       requiredRestDays: 0,
     };
     try {
-      const logs = JSON.parse(localStorage.getItem("pitcher_app_logs") || "[]");
-      logs.push(newLog);
-      localStorage.setItem("pitcher_app_logs", JSON.stringify(logs));
+      const newLogs = [...logs, newLog];
+      if (onLogsChanged) {
+        onLogsChanged(newLogs);
+      } else {
+        localStorage.setItem("pitcher_app_pitch_logs", JSON.stringify(newLogs));
+      }
       alert("Speed logged! Check the Dashboard to see your progress.");
       setSessionMaxSpeed("");
       setSessionPitchType("Fastball");
@@ -241,23 +251,27 @@ export default function WorkoutPlanner({ currentDate }: WorkoutPlannerProps) {
   })();
 
   const topSpeedMph = (() => {
-    try {
-      const logs = JSON.parse(localStorage.getItem("pitcher_app_logs") || "[]");
-      return logs.reduce(
-        (max: number, log: any) => Math.max(max, log.topSpeedMph || 0),
-        0,
-      );
-    } catch {
-      return 0;
-    }
+    return logs.reduce((max: number, log: PitchLog) => {
+      let maxSpeed = log.topSpeedMph || 0;
+      if (log.speeds) {
+        log.speeds.forEach((s) => {
+          if (s.topSpeedMph > maxSpeed) maxSpeed = s.topSpeedMph;
+        });
+      }
+      return Math.max(max, maxSpeed);
+    }, 0);
   })();
 
   const existingPitchTypes = (() => {
     try {
-      const logs = JSON.parse(localStorage.getItem("pitcher_app_logs") || "[]");
-      return Array.from(
-        new Set(logs.map((l: any) => l.pitchType || "Fastball")),
-      );
+      const types = new Set<string>(["Fastball"]);
+      logs.forEach((log) => {
+        if (log.pitchType) types.add(log.pitchType);
+        if (log.speeds) {
+          log.speeds.forEach((s) => types.add(s.pitchType));
+        }
+      });
+      return Array.from(types);
     } catch {
       return ["Fastball"];
     }

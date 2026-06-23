@@ -298,7 +298,11 @@ export default function App() {
           id="tab-content-renderer"
         >
           {activeTab === "workouts" && (
-            <WorkoutPlanner currentDate={currentDate} />
+            <WorkoutPlanner
+              currentDate={currentDate}
+              logs={pitchLogs}
+              onLogsChanged={handleLogsChanged}
+            />
           )}
 
           {activeTab === "pitchlogs" && (
