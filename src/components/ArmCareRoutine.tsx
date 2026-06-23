@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Check, Flame, Trophy, Info, Sparkles, Activity, ShieldAlert } from 'lucide-react';
+import { Check, Flame, Trophy, Info, Sparkles, Activity, ShieldAlert, Volume2 } from 'lucide-react';
 import { ARM_CARE_STEPS } from '../constants/programData';
 import { ArmCareProgress } from '../types';
 
@@ -12,6 +12,7 @@ export default function ArmCareRoutine({ currentDate, onLoggedToday }: ArmCareRo
   const [completedSteps, setCompletedSteps] = useState<number[]>([]);
   const [streakCount, setStreakCount] = useState<number>(0);
   const [completeHistory, setCompleteHistory] = useState<ArmCareProgress[]>([]);
+  const [expandedStep, setExpandedStep] = useState<number | null>(null);
 
   // Load state on mount / date change
   useEffect(() => {
@@ -235,44 +236,84 @@ export default function ArmCareRoutine({ currentDate, onLoggedToday }: ArmCareRo
 
           {ARM_CARE_STEPS.map((step, idx) => {
             const isDone = completedSteps.includes(idx);
+            const isExpanded = expandedStep === idx;
             return (
               <div 
                 key={idx}
                 id={`armcare-step-card-${idx}`}
-                onClick={() => handleToggleStep(idx)}
-                className={`group cursor-pointer p-4 rounded-2xl border-4 transition-all flex items-start gap-4 shadow-[4px_4px_0px_0px_#004E89] ${
+                className={`group p-4 rounded-2xl border-4 transition-all flex items-start gap-4 shadow-[4px_4px_0px_0px_#004E89] ${
                   isDone 
                     ? 'border-[#48BB78] bg-[#EBF8FF]/20' 
                     : 'border-[#004E89] bg-white hover:bg-[#EBF8FF]/10'
                 }`}
               >
-                <div className={`mt-0.5 w-6 h-6 shrink-0 rounded-lg flex items-center justify-center border-2 transition-all ${
+                <div 
+                  onClick={() => handleToggleStep(idx)}
+                  className={`mt-0.5 w-6 h-6 shrink-0 rounded-lg flex items-center justify-center border-2 transition-all cursor-pointer ${
                   isDone 
-                    ? 'bg-[#48BB78] border-[#004E89] text-white' 
-                    : 'border-[#004E89] bg-[#F0F4F8] text-transparent'
+                    ? 'bg-[#48BB78] border-[#004E89] text-white shadow-sm' 
+                    : 'border-[#004E89] bg-[#F0F4F8] text-transparent hover:bg-white'
                 }`}>
                   <Check size={14} className="stroke-[3]" />
                 </div>
 
                 <div className="flex-1 min-w-0 font-semibold">
-                  <div className="flex flex-wrap items-baseline justify-between gap-1.5">
-                    <h4 className={`font-black text-sm uppercase tracking-tight transition-colors ${isDone ? 'text-slate-400 line-through' : 'text-[#004E89]'}`}>
-                      {step.name}
-                    </h4>
-                    <span className="text-[10px] font-black uppercase text-[#004E89] bg-[#FFBC42] px-2.5 py-0.5 rounded-lg border-2 border-[#004E89]">
-                      {step.reps}
-                    </span>
+                  <div className="flex flex-wrap items-center justify-between gap-2">
+                    <div className="flex flex-wrap items-baseline gap-1.5">
+                      <h4 
+                        onClick={() => setExpandedStep(isExpanded ? null : idx)}
+                        className={`font-black text-sm uppercase tracking-tight cursor-pointer transition-colors hover:text-[#004E89] ${isDone ? 'text-slate-400 line-through' : 'text-[#004E89]'}`}
+                      >
+                        {step.name}
+                      </h4>
+                      <span className="text-[10px] font-black uppercase text-[#004E89] bg-[#FFBC42] px-2.5 py-0.5 rounded-lg border-2 border-[#004E89]">
+                        {step.reps}
+                      </span>
+                    </div>
+                    <button 
+                      onClick={() => setExpandedStep(isExpanded ? null : idx)}
+                      className="text-xs font-black text-[#004E89] hover:bg-[#FFBC42] bg-[#EBF8FF] border-2 border-[#004E89] px-3 py-1 rounded-xl transition-all shadow-[2px_2px_0px_0px_#004E89] cursor-pointer"
+                    >
+                      {isExpanded ? 'Hide' : 'Coach Guide'}
+                    </button>
                   </div>
-                  <p className={`text-xs mt-1 transition-colors leading-relaxed ${isDone ? 'text-slate-400 font-medium' : 'text-slate-700 font-semibold'}`}>
+                  
+                  <p className={`text-xs mt-2 transition-colors leading-relaxed ${isDone ? 'text-slate-400 font-medium' : 'text-slate-700 font-semibold'}`}>
                     {step.description}
                   </p>
 
-                  <div className="mt-3 flex items-start gap-2 bg-[#EBF8FF] text-[#004E89] rounded-xl p-2.5 text-xs border-2 border-[#004E89]/80 shadow-inner">
-                    <Info size={14} className="shrink-0 mt-0.5 text-[#FF6B35]" />
-                    <span className="text-[11px] font-semibold text-slate-800">
-                      <strong className="font-black text-[#004E89] uppercase tracking-wide text-[10px] block mb-0.5">Focus Cue:</strong> {step.coachingCue}
-                    </span>
-                  </div>
+                  {isExpanded && (
+                    <div className="mt-3 animate-fadeIn">
+                      {step.videoLink && (
+                        <div className="mb-3 aspect-video rounded-xl overflow-hidden border-2 border-[#004E89] bg-black shadow-inner">
+                          <iframe
+                            width="100%"
+                            height="100%"
+                            src={step.videoLink}
+                            title={`${step.name} video guide`}
+                            frameBorder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerPolicy="strict-origin-when-cross-origin"
+                            allowFullScreen
+                          ></iframe>
+                        </div>
+                      )}
+
+                      <div className="bg-[#EBF8FF] text-[#004E89] rounded-xl p-3 border-2 border-[#004E89]/80 shadow-inner">
+                        <div className="flex items-center gap-1.5 mb-1.5">
+                          <div className="bg-[#FF6B35] rounded-full p-1 text-white">
+                            <Volume2 size={12} className="stroke-[3]" />
+                          </div>
+                          <strong className="font-black text-[#004E89] uppercase tracking-wide text-[10px]">Coach's Voice</strong>
+                        </div>
+                        <ul className="space-y-1.5 text-xs">
+                          <li className="flex items-start gap-1.5 font-semibold text-slate-800">
+                            <span className="text-[#FF6B35] text-xs font-black mt-0.5">•</span> {step.coachingCue}
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  )}
                 </div>
               </div>
             );

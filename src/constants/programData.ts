@@ -389,7 +389,8 @@ export const EXERCISE_LIBRARY: Exercise[] = [
     },
     description: 'Stand sideways to solid wall holding med ball at chest. Hinge into back hip, shift weight forward and throw the ball rotationally against wall, catching bounce.',
     cues: ['Load your back leg like a pitcher on the mound', 'Lead with your hips, then let chest follow', 'Throw from your core, keep arms stable'],
-    visualType: 'core'
+    visualType: 'core',
+    videoLink: 'https://www.youtube.com/embed/o9BC7lgN1bo?si=UC5J7yVslQCVxQYI'
   },
 
   // --- COOL DOWN ---
@@ -569,37 +570,43 @@ export const ARM_CARE_STEPS = [
     name: 'Band External Rotation',
     reps: '2 sets x 10 reps',
     description: 'Elbow pinned to your side at 90 degrees. Hold band, pull hand outward away from your stomach, keeping elbow tight.',
-    coachingCue: 'Place a rolled-up towel between elbow and ribs to keep form perfect'
+    coachingCue: 'Place a rolled-up towel between elbow and ribs to keep form perfect',
+    videoLink: 'https://www.youtube.com/embed/dLSytuFOCX8?si=PKEFtjHiDRpLfs6L'
   },
   {
     name: 'Band Internal Rotation',
     reps: '2 sets x 10 reps',
     description: 'Elbow pinned to side at 90 degrees. Hold band, pull hand inward across your stomach, keeping your shoulder stable.',
-    coachingCue: 'Keep wrist straight; move only from the rotator cuff'
+    coachingCue: 'Keep wrist straight; move only from the rotator cuff',
+    videoLink: 'https://www.youtube.com/embed/7bXPgfGzW9k?si=ykiVpcAQjk__FXoo'
   },
   {
     name: 'Cross-Body / Sleeper Stretch',
     reps: '2 sets x 20 sec per side',
     description: 'Lie on side, arm at 90 degrees out from shoulder. Carefully press your wrist down toward the floor using opposite hand.',
-    coachingCue: 'Go strictly to comfortable stretch; NEVER push into pinching pain'
+    coachingCue: 'Go strictly to comfortable stretch; NEVER push into pinching pain',
+    videoLink: 'https://www.youtube.com/embed/a_Z9WhGyKkE?si=wPReIIIPQXQ1GDes&start=10'
   },
   {
     name: '90/90 Hip Switches',
     reps: '8-10 reps side to side',
     description: 'Sit on ground with knees bent at 90 degrees in front/side. Without lifting hands if possible, rotate hips side to side to change knee direction.',
-    coachingCue: 'Unlocks hip internal rotation key to generating force from the legs'
+    coachingCue: 'Unlocks hip internal rotation key to generating force from the legs',
+    videoLink: 'https://www.youtube.com/embed/m51AZSXMvEA?si=ElLdbQAv8pRsqSc0'
   },
   {
     name: 'Quadruped "Open the Gate" Rotations',
     reps: '8 reps each side',
     description: 'On all fours, place hand behind head. Rotate elbow up to sky, opening your chest, then tuck elbow under towards opposite armpit.',
-    coachingCue: 'Follow your elbow with your eyes to get full upper back (T-Spine) stretch'
+    coachingCue: 'Follow your elbow with your eyes to get full upper back (T-Spine) stretch',
+    videoLink: 'https://www.youtube.com/embed/XoFSl3i9Gns?si=vvdXLPFZKneEDxGK'
   },
   {
     name: 'Y-T-W Raises',
     reps: '1 set of 8 reps each letter',
     description: 'Hinge forward at hips. Raise arms straight up at 45 degrees for Ys, straight sideways for Ts, and bent-elbow squeeze for Ws.',
-    coachingCue: 'Squeeze the muscles around your shoulder blades on every single rep'
+    coachingCue: 'Squeeze the muscles around your shoulder blades on every single rep',
+    videoLink: 'https://www.youtube.com/embed/QdGTI4Lshg4?si=4TAIeNT73rG6jyDv'
   }
 ];
 

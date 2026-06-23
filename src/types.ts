@@ -1,8 +1,23 @@
+export interface AccuracyLog {
+  id: string;
+  date: string; // YYYY-MM-DD
+  strikes: number;
+  balls: number;
+  longestStreak: number;
+}
+
+export interface PitchSpeed {
+  pitchType: string;
+  topSpeedMph: number;
+}
+
 export interface PitchLog {
   id: string;
   date: string;
   pitchesCount: number;
-  topSpeedMph?: number;
+  topSpeedMph?: number; // legacy
+  pitchType?: string; // legacy
+  speeds?: PitchSpeed[];
   caughtSameDay: boolean;
   notes?: string;
   clearedDate: string;
